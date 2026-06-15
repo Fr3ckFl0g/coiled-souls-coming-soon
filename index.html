@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Coiled Souls Studios — Coming Soon</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400;1,600&family=DM+Sans:wght@300;400&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --warm-white:   #FDFAF6;
+      --linen:        #F2EBE1;
+      --charcoal:     #2A2420;
+      --charcoal-mid: #4A3F3B;
+      --terracotta:   #8B4513;
+      --sage:         #7A8E7A;
+      --stone:        #C4AA8F;
+      --mid-gray:     #8C8078;
+    }
+
+    html, body { height: 100%; }
+
+    body {
+      background-color: var(--warm-white);
+      color: var(--charcoal);
+      font-family: 'DM Sans', Arial, sans-serif;
+      font-weight: 300;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      min-height: 100vh;
+      padding: 2rem;
+      text-align: center;
+    }
+
+    .container {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 2rem;
+      max-width: 640px;
+      width: 100%;
+    }
+
+    .logo {
+      width: min(280px, 72vw);
+      height: auto;
+    }
+
+    .divider {
+      width: 40px;
+      height: 1px;
+      background: var(--stone);
+    }
+
+    .about {
+      font-family: 'Cormorant Garamond', Georgia, serif;
+      font-style: italic;
+      font-weight: 400;
+      font-size: clamp(1.1rem, 2.5vw, 1.35rem);
+      line-height: 1.8;
+      color: var(--charcoal-mid);
+      max-width: 480px;
+    }
+
+    .coming-soon {
+      font-family: 'DM Sans', Arial, sans-serif;
+      font-weight: 300;
+      font-size: 0.7rem;
+      letter-spacing: 0.45em;
+      text-transform: uppercase;
+      color: var(--terracotta);
+    }
+
+    footer {
+      position: fixed;
+      bottom: 1.5rem;
+      font-size: 0.68rem;
+      letter-spacing: 0.12em;
+      color: var(--mid-gray);
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <img
+      src="logo.png"
+      alt="Coiled Souls Studios"
+      class="logo"
+    />
+    <div class="divider"></div>
+    <p class="about">
+      Each piece is hand-built using ancient coil techniques,<br />
+      infusing the raw earth with spirit and life.<br />
+      They are Coiled Souls.
+    </p>
+    <div class="divider"></div>
+    <p class="coming-soon">Coming Soon</p>
+  </div>
+  <footer>© Coiled Souls Studios</footer>
+</body>
+</html>
