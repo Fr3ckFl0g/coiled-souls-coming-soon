@@ -128,7 +128,7 @@ nav a:hover, nav a.active { color: var(--terracotta); }
 .home-photo-pair {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  gap: 1rem;
+  gap: 3.5rem;
 }
 
 .home-photo-pair img {
