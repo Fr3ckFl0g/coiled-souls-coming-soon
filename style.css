@@ -27,10 +27,16 @@
   --ease: cubic-bezier(0.22, 1, 0.36, 1);
 }
 
-html { scroll-behavior: smooth; }
+html { scroll-behavior: smooth; overflow-x: clip; }
 
 html, body {
   background-color: var(--warm-white);
+  /* unevenly-fired clay: warm blooms drift across the page like a kiln flash */
+  background-image:
+    radial-gradient(120% 85% at 10% -5%,  rgba(176, 92, 82, 0.045), transparent 58%),
+    radial-gradient(95% 75% at 102% 28%,  rgba(107, 127, 94, 0.038), transparent 55%),
+    radial-gradient(110% 95% at 50% 112%, rgba(196, 170, 143, 0.06), transparent 60%);
+  background-attachment: fixed;
   color: var(--charcoal);
   font-family: 'Hanken Grotesk', system-ui, Arial, sans-serif;
   font-weight: 400;
@@ -41,16 +47,28 @@ html, body {
   text-rendering: optimizeLegibility;
 }
 
-/* subtle fired-clay grain over everything — craft texture */
+/* fine paper/clay grain pressed over everything — the tooth of handmade stock */
 body::before {
   content: "";
   position: fixed;
   inset: 0;
   z-index: 9999;
   pointer-events: none;
-  opacity: 0.05;
+  opacity: 0.07;
   mix-blend-mode: multiply;
-  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='180' height='180'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.8' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+}
+
+/* coarser cloud-mottle — the soft unevenness of a hand-pulled sheet */
+body::after {
+  content: "";
+  position: fixed;
+  inset: 0;
+  z-index: 9998;
+  pointer-events: none;
+  opacity: 0.04;
+  mix-blend-mode: multiply;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='520' height='520'%3E%3Cfilter id='m'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.012' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23m)'/%3E%3C/svg%3E");
 }
 
 a { color: inherit; text-decoration: none; }
@@ -95,10 +113,16 @@ nav a {
 nav a:hover { color: var(--oxblood); }
 nav a.active { color: var(--oxblood); border-bottom-color: var(--oxblood); }
 
+/* hand-drawn ink rule — a single wobbling stroke pulled by hand, not a ruler */
 .hairline {
-  height: 1px;
-  background: linear-gradient(90deg, transparent, var(--linen-deep) 18%, var(--linen-deep) 82%, transparent);
+  height: 13px;
   border: 0;
+  margin: 0 auto;
+  max-width: var(--maxw);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: clamp(220px, 46vw, 520px) 13px;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 520 13' preserveAspectRatio='none'%3E%3Cpath d='M4 7.2 C70 3.6 132 9.4 198 6.4 C262 3.5 318 10.2 380 6.8 C436 3.8 486 8.6 516 5.4' fill='none' stroke='%23B05C52' stroke-width='1.5' stroke-linecap='round' opacity='0.55'/%3E%3C/svg%3E");
 }
 
 /* legacy centered logo (still used on inner pages) */
@@ -117,6 +141,7 @@ nav a.active { color: var(--oxblood); border-bottom-color: var(--oxblood); }
   background-size: contain;
   background-repeat: no-repeat;
   opacity: 0.85;
+  transform: rotate(-5deg);
 }
 
 /* ── HERO (home) ───────────────────────────── */
@@ -255,8 +280,14 @@ nav a.active { color: var(--oxblood); border-bottom-color: var(--oxblood); }
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 1rem;
+  gap: 0;
+  transition: transform 0.25s var(--ease);
 }
+
+/* staggered, hand-pinned arrangement — nothing sits on the same baseline */
+.series-card:nth-child(3n+1) { transform: rotate(-1.1deg); }
+.series-card:nth-child(3n+2) { transform: rotate(0.7deg) translateY(2rem); }
+.series-card:nth-child(3n)   { transform: rotate(-0.5deg) translateY(0.9rem); }
 
 .series-card img {
   width: 100%;
@@ -273,14 +304,25 @@ nav a.active { color: var(--oxblood); border-bottom-color: var(--oxblood); }
   transform: translateY(-3px);
 }
 
+/* caption rides up over the photo's lower edge on a little paper chip */
 .series-card-title {
   font-family: 'Fraunces', Georgia, serif;
   font-style: italic;
   font-size: 1.2rem;
   color: var(--oxblood);
   letter-spacing: 0.01em;
-  transition: color 0.2s var(--ease);
+  position: relative;
+  z-index: 2;
+  margin-top: -1.15rem;
+  align-self: center;
+  background: var(--warm-white);
+  padding: 0.3rem 0.95rem;
+  box-shadow: 0 4px 14px rgba(42, 36, 32, 0.12);
+  transition: color 0.2s var(--ease), transform 0.2s var(--ease);
 }
+
+.series-card:nth-child(2n) .series-card-title { transform: rotate(1.4deg); }
+.series-card:nth-child(2n+1) .series-card-title { transform: rotate(-1.2deg); }
 
 .series-card-title:hover { color: var(--charcoal); }
 
@@ -312,8 +354,13 @@ nav a.active { color: var(--oxblood); border-bottom-color: var(--oxblood); }
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 0.75rem;
+  gap: 0;
 }
+
+/* the same off-the-ruler stagger across a series' pieces */
+.series-grid .piece:nth-child(3n+1) { transform: rotate(-1deg); }
+.series-grid .piece:nth-child(3n+2) { transform: rotate(0.8deg) translateY(1.8rem); }
+.series-grid .piece:nth-child(3n)   { transform: rotate(-0.5deg) translateY(0.8rem); }
 
 .piece img {
   width: 100%;
@@ -328,10 +375,19 @@ nav a.active { color: var(--oxblood); border-bottom-color: var(--oxblood); }
   font-family: 'Fraunces', Georgia, serif;
   font-style: italic;
   font-size: 0.98rem;
-  color: var(--mid-gray);
+  color: var(--charcoal-mid);
+  position: relative;
+  z-index: 2;
+  margin-top: -1rem;
+  background: var(--warm-white);
+  padding: 0.28rem 0.9rem;
+  box-shadow: 0 4px 14px rgba(42, 36, 32, 0.12);
 }
 
-/* series prose (e.g. Blue Heron) */
+.series-grid .piece:nth-child(2n) .piece-caption { transform: rotate(1.3deg); }
+.series-grid .piece:nth-child(2n+1) .piece-caption { transform: rotate(-1.2deg); }
+
+/* series prose (e.g. Blue Heron) — image nudged up and tilted, copy sits lower */
 .series-prose-grid {
   display: grid;
   grid-template-columns: 0.9fr 1.1fr;
@@ -339,7 +395,14 @@ nav a.active { color: var(--oxblood); border-bottom-color: var(--oxblood); }
   align-items: start;
 }
 
+.series-prose-grid .piece {
+  transform: rotate(-1.4deg);
+  margin-top: -0.5rem;
+}
+
 .series-prose-grid .piece img { aspect-ratio: 3/4; }
+
+.series-prose-grid .series-prose { margin-top: 1.75rem; }
 
 .series-prose {
   font-size: 1.04rem;
@@ -451,4 +514,10 @@ footer {
   .hero-media { order: -1; }
   .hero-media::after { left: 8px; }
   .series-prose-grid { grid-template-columns: 1fr; }
+  /* keep the hand-tilt, drop the vertical stagger so a single column stays tidy */
+  .series-card:nth-child(3n+2),
+  .series-card:nth-child(3n),
+  .series-grid .piece:nth-child(3n+2),
+  .series-grid .piece:nth-child(3n) { transform: rotate(-0.6deg) translateY(0); }
+  .series-prose-grid .piece { transform: rotate(-1deg); margin-top: 0; }
 }
