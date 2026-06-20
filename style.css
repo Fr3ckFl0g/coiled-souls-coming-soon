@@ -76,7 +76,7 @@ nav a:hover, nav a.active { color: var(--terracotta); }
 .home-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-  gap: 1rem;
+  gap: 1.25rem;
   max-width: 900px;
   margin: 0 auto 3rem;
   padding: 0 2rem;
@@ -87,6 +87,9 @@ nav a:hover, nav a.active { color: var(--terracotta); }
   aspect-ratio: 3/4;
   object-fit: cover;
   display: block;
+  border: 6px solid var(--warm-white);
+  outline: 1px solid var(--stone);
+  box-shadow: 0 2px 12px rgba(42,36,32,0.10);
 }
 
 /* PAGE LINKS */
@@ -153,6 +156,9 @@ nav a:hover, nav a.active { color: var(--terracotta); }
   aspect-ratio: 3/4;
   object-fit: cover;
   display: block;
+  border: 6px solid var(--warm-white);
+  outline: 1px solid var(--stone);
+  box-shadow: 0 2px 12px rgba(42,36,32,0.10);
 }
 
 .piece-caption {
