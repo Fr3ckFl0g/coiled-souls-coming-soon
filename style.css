@@ -348,11 +348,6 @@ nav a.active { color: var(--oxblood); border-bottom-color: var(--oxblood); }
   gap: 0;
 }
 
-/* the same off-the-ruler stagger across a series' pieces */
-.series-grid .piece:nth-child(3n+1) { transform: rotate(-1deg); }
-.series-grid .piece:nth-child(3n+2) { transform: rotate(0.8deg) translateY(1.8rem); }
-.series-grid .piece:nth-child(3n)   { transform: rotate(-0.5deg) translateY(0.8rem); }
-
 .piece img {
   width: 100%;
   aspect-ratio: 3/4;
@@ -375,20 +370,12 @@ nav a.active { color: var(--oxblood); border-bottom-color: var(--oxblood); }
   box-shadow: 0 4px 14px rgba(42, 36, 32, 0.12);
 }
 
-.series-grid .piece:nth-child(2n) .piece-caption { transform: rotate(1.3deg); }
-.series-grid .piece:nth-child(2n+1) .piece-caption { transform: rotate(-1.2deg); }
-
-/* series prose (e.g. Blue Heron) — image nudged up and tilted, copy sits lower */
+/* series prose (e.g. Blue Heron) */
 .series-prose-grid {
   display: grid;
   grid-template-columns: 0.9fr 1.1fr;
   gap: clamp(2rem, 5vw, 3.5rem);
   align-items: start;
-}
-
-.series-prose-grid .piece {
-  transform: rotate(-1.4deg);
-  margin-top: -0.5rem;
 }
 
 .series-prose-grid .piece img { aspect-ratio: 3/4; }
@@ -505,8 +492,4 @@ footer {
   .hero-media { order: -1; }
   .hero-media::after { left: 8px; }
   .series-prose-grid { grid-template-columns: 1fr; }
-  /* keep the hand-tilt, drop the vertical stagger so a single column stays tidy */
-  .series-grid .piece:nth-child(3n+2),
-  .series-grid .piece:nth-child(3n) { transform: rotate(-0.6deg) translateY(0); }
-  .series-prose-grid .piece { transform: rotate(-1deg); margin-top: 0; }
 }
