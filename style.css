@@ -106,6 +106,7 @@ nav a:hover, nav a.active { color: var(--terracotta); }
 .alt-photos img,
 .alt-photo-single img {
   width: 100%;
+  aspect-ratio: 4/5;
   object-fit: cover;
   display: block;
   border: 6px solid var(--warm-white);
@@ -132,6 +133,7 @@ nav a:hover, nav a.active { color: var(--terracotta); }
 
 .home-photo-pair img {
   width: 100%;
+  aspect-ratio: 4/5;
   object-fit: cover;
   display: block;
   border: 6px solid var(--warm-white);
