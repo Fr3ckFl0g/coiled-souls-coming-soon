@@ -284,6 +284,9 @@ nav a.active { color: var(--oxblood); border-bottom-color: var(--oxblood); }
   padding: 0 2rem;
 }
 
+/* inner pages have no hero to absorb the overhanging logo — clear it */
+.series-index { margin-top: 150px; }
+
 .series-card {
   display: flex;
   flex-direction: column;
@@ -339,7 +342,7 @@ nav a.active { color: var(--oxblood); border-bottom-color: var(--oxblood); }
 
 .series-section {
   max-width: var(--maxw);
-  margin: 0 auto;
+  margin: 150px auto 0;
   padding: 0 2rem 4rem;
 }
 
@@ -497,6 +500,7 @@ footer {
   .site-header { flex-direction: column; align-items: center; gap: 1.1rem; padding: 1.3rem 1.5rem; }
   .site-header .brand-mark { margin-bottom: 0; }
   .hairline { background-position: center; }
+  .series-index, .series-section { margin-top: 2rem; }
   .hero { grid-template-columns: 1fr; gap: 2rem; }
   .hero-copy { max-width: none; }
   .hero-media { order: -1; }
