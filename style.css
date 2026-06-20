@@ -103,7 +103,8 @@ nav a:hover, nav a.active { color: var(--terracotta); }
   gap: 1rem;
 }
 
-.alt-photos img {
+.alt-photos img,
+.alt-photo-single img {
   width: 100%;
   object-fit: cover;
   display: block;
