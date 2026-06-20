@@ -123,11 +123,36 @@ nav a:hover, nav a.active { color: var(--terracotta); }
 
 .alt-text p + p { margin-top: 1.25em; }
 
+/* PHOTO PAIR */
+.home-photo-pair {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem;
+}
+
+.home-photo-pair img {
+  width: 100%;
+  object-fit: cover;
+  display: block;
+  border: 6px solid var(--warm-white);
+  outline: 1px solid var(--stone);
+  box-shadow: 0 4px 18px rgba(42,36,32,0.12);
+}
+
 @media (max-width: 640px) {
   .alt-row, .alt-row--reverse {
     grid-template-columns: 1fr;
     direction: ltr;
-    gap: 2rem;
+    gap: 1.25rem;
+  }
+
+  .alt-text {
+    font-size: 1rem;
+    line-height: 1.75;
+  }
+
+  .home-alternating {
+    gap: 2.5rem;
   }
 }
 
