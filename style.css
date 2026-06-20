@@ -204,6 +204,86 @@ nav a:hover, nav a.active { color: var(--terracotta); }
   stroke-linejoin: round;
 }
 
+/* SERIES INDEX */
+.series-index {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 2.5rem;
+  max-width: 900px;
+  margin: 0 auto 4rem;
+  padding: 0 2rem;
+}
+
+.series-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+}
+
+.series-card img {
+  width: 100%;
+  aspect-ratio: 3/4;
+  object-fit: cover;
+  display: block;
+  border: 6px solid var(--warm-white);
+  outline: 1px solid var(--stone);
+  box-shadow: 0 2px 12px rgba(42,36,32,0.10);
+  transition: box-shadow 0.2s;
+}
+
+.series-card img:hover {
+  box-shadow: 0 4px 20px rgba(42,36,32,0.18);
+}
+
+.series-card-title {
+  font-family: 'Cormorant Garamond', Georgia, serif;
+  font-style: italic;
+  font-size: 1.15rem;
+  color: var(--terracotta);
+  letter-spacing: 0.04em;
+  transition: color 0.2s;
+}
+
+.series-card-title:hover { color: var(--charcoal); }
+
+/* SERIES PROSE LAYOUT */
+.series-prose-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 3rem;
+  align-items: start;
+}
+
+@media (max-width: 640px) {
+  .series-prose-grid { grid-template-columns: 1fr; }
+}
+
+.series-prose {
+  font-family: 'Cormorant Garamond', Georgia, serif;
+  font-size: clamp(1rem, 2vw, 1.15rem);
+  line-height: 1.85;
+  color: var(--charcoal-mid);
+}
+
+.series-prose p + p { margin-top: 1.1em; }
+
+/* BACK LINK */
+.series-back {
+  text-align: center;
+  padding-bottom: 3rem;
+}
+
+.series-back a {
+  font-size: 0.72rem;
+  letter-spacing: 0.3em;
+  text-transform: uppercase;
+  color: var(--mid-gray);
+  transition: color 0.2s;
+}
+
+.series-back a:hover { color: var(--terracotta); }
+
 /* FOOTER */
 footer {
   text-align: center;
