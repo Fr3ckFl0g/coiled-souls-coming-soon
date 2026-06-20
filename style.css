@@ -220,6 +220,13 @@ nav a:hover, nav a.active { color: var(--terracotta); }
   gap: 2.5rem;
 }
 
+@media (max-width: 600px) {
+  .connect-links-row {
+    flex-wrap: wrap;
+    gap: 1.75rem;
+  }
+}
+
 .connect-link {
   display: flex;
   align-items: center;
