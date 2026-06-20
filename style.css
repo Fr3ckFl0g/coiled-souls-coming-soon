@@ -270,6 +270,7 @@ nav a.active { color: var(--oxblood); border-bottom-color: var(--oxblood); }
   letter-spacing: 0.26em;
   text-transform: uppercase;
   color: var(--terracotta);
+  margin-top: 3rem;
   margin-bottom: 2rem;
 }
 
