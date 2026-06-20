@@ -281,13 +281,7 @@ nav a.active { color: var(--oxblood); border-bottom-color: var(--oxblood); }
   flex-direction: column;
   align-items: center;
   gap: 0;
-  transition: transform 0.25s var(--ease);
 }
-
-/* staggered, hand-pinned arrangement — nothing sits on the same baseline */
-.series-card:nth-child(3n+1) { transform: rotate(-1.1deg); }
-.series-card:nth-child(3n+2) { transform: rotate(0.7deg) translateY(2rem); }
-.series-card:nth-child(3n)   { transform: rotate(-0.5deg) translateY(0.9rem); }
 
 .series-card img {
   width: 100%;
@@ -318,11 +312,8 @@ nav a.active { color: var(--oxblood); border-bottom-color: var(--oxblood); }
   background: var(--warm-white);
   padding: 0.3rem 0.95rem;
   box-shadow: 0 4px 14px rgba(42, 36, 32, 0.12);
-  transition: color 0.2s var(--ease), transform 0.2s var(--ease);
+  transition: color 0.2s var(--ease);
 }
-
-.series-card:nth-child(2n) .series-card-title { transform: rotate(1.4deg); }
-.series-card:nth-child(2n+1) .series-card-title { transform: rotate(-1.2deg); }
 
 .series-card-title:hover { color: var(--charcoal); }
 
@@ -515,8 +506,6 @@ footer {
   .hero-media::after { left: 8px; }
   .series-prose-grid { grid-template-columns: 1fr; }
   /* keep the hand-tilt, drop the vertical stagger so a single column stays tidy */
-  .series-card:nth-child(3n+2),
-  .series-card:nth-child(3n),
   .series-grid .piece:nth-child(3n+2),
   .series-grid .piece:nth-child(3n) { transform: rotate(-0.6deg) translateY(0); }
   .series-prose-grid .piece { transform: rotate(-1deg); margin-top: 0; }
