@@ -72,19 +72,29 @@ nav a:hover, nav a.active { color: var(--terracotta); }
 
 .about-text p + p { margin-top: 1.25em; }
 
-/* HOME INTERSPERSED LAYOUT */
-.home-interspersed {
-  max-width: 680px;
+/* HOME SPLIT LAYOUT */
+.home-split {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 3rem;
+  align-items: start;
+  max-width: 960px;
   margin: 0 auto 3rem;
   padding: 0 2rem;
-  display: flex;
-  flex-direction: column;
-  gap: 2.5rem;
 }
 
-.home-photo img {
+@media (max-width: 640px) {
+  .home-split { grid-template-columns: 1fr; }
+}
+
+.home-split-photos {
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+}
+
+.home-split-photos img {
   width: 100%;
-  max-height: 520px;
   object-fit: cover;
   display: block;
   border: 6px solid var(--warm-white);
@@ -92,14 +102,17 @@ nav a:hover, nav a.active { color: var(--terracotta); }
   box-shadow: 0 2px 12px rgba(42,36,32,0.10);
 }
 
-.home-text {
+.home-split-text {
+  position: sticky;
+  top: 2rem;
   font-family: 'Cormorant Garamond', Georgia, serif;
   font-style: italic;
-  font-size: clamp(1.05rem, 2.2vw, 1.2rem);
+  font-size: clamp(1.05rem, 2vw, 1.2rem);
   line-height: 1.9;
   color: var(--charcoal-mid);
-  text-align: center;
 }
+
+.home-split-text p + p { margin-top: 1.25em; }
 
 /* PAGE LINKS */
 .page-links {
