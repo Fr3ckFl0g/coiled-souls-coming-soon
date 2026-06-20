@@ -396,7 +396,7 @@ nav a.active { color: var(--oxblood); border-bottom-color: var(--oxblood); }
 
 .connect-intro {
   font-family: 'Fraunces', Georgia, serif;
-  font-style: italic;
+  font-style: normal;
   font-size: clamp(1.15rem, 2.4vw, 1.4rem);
   line-height: 1.7;
   color: var(--charcoal-mid);
