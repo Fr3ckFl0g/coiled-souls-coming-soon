@@ -215,7 +215,7 @@ nav a:hover, nav a.active { color: var(--terracotta); }
 
 .connect-links-row {
   display: flex;
-  flex-wrap: wrap;
+  flex-wrap: nowrap;
   justify-content: center;
   gap: 2.5rem;
 }
