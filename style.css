@@ -377,6 +377,16 @@ nav a.active { color: var(--oxblood); border-bottom-color: var(--oxblood); }
   gap: 0;
 }
 
+.piece--wide {
+  grid-column: 1 / -1;
+  max-width: 560px;
+  margin: 0 auto;
+}
+.piece--wide img {
+  aspect-ratio: auto !important;
+  object-fit: contain !important;
+}
+
 .piece img {
   width: 100%;
   aspect-ratio: 3/4;
