@@ -279,6 +279,27 @@ nav a.active { color: var(--oxblood); border-bottom-color: var(--oxblood); }
   margin-bottom: 1.6rem;
 }
 
+/* caption/dedication for a bordered group */
+.group-caption {
+  text-align: center;
+  font-family: 'Fraunces', Georgia, serif;
+  font-style: italic;
+  font-size: 1.1rem;
+  color: var(--oxblood);
+  margin-top: 1.5rem;
+}
+
+/* small availability note, sits below a caption (smaller than the caption) */
+.piece-status {
+  display: block;
+  text-align: center;
+  font-size: 0.62rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--mid-gray);
+  margin-top: 0.4rem;
+}
+
 /* individual pieces in a collection that are NOT part of a series:
    a plain grid, no surrounding border */
 .series-section > .series-grid { margin-bottom: clamp(2rem, 5vw, 3.5rem); }
