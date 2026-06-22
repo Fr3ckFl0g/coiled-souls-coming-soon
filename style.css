@@ -346,6 +346,39 @@ nav a.active { color: var(--oxblood); border-bottom-color: var(--oxblood); }
 
 .series-card-title:hover { color: var(--charcoal); }
 
+.series-card-coming-soon {
+  width: 100%;
+  aspect-ratio: 3/4;
+  border: 7px solid var(--warm-white);
+  outline: 1px solid var(--stone);
+  box-shadow: 0 4px 18px rgba(42, 36, 32, 0.12);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: 'Fraunces', Georgia, serif;
+  font-style: italic;
+  font-size: 1.4rem;
+  color: var(--oxblood);
+  background: var(--warm-white);
+  letter-spacing: 0.02em;
+}
+
+.series-coming-soon-block {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 260px;
+}
+
+.series-coming-soon-text {
+  font-family: 'Fraunces', Georgia, serif;
+  font-style: italic;
+  font-size: clamp(1.6rem, 4vw, 2.2rem);
+  color: var(--oxblood);
+  letter-spacing: 0.02em;
+  text-align: center;
+}
+
 /* ── SERIES DETAIL ─────────────────────────── */
 .series-heading {
   text-align: center;
